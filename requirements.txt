@@ -1,4 +1,5 @@
 quilt
 matplotlib
 scikit-learn
+scipy
 pandas
