@@ -1,0 +1,3 @@
+packages:
+  - akarve/pydata_book/titanic:original
+  - uciml/iris
