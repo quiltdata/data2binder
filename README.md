@@ -1,18 +1,21 @@
-This repository is a Binder specification that lets you use Quilt packages easily in a hosted environment.
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/quiltdata/data2binder/master?filepath=index.ipynb)
 
-Quilt is a data package manager. Visit us at [our homepage](http://quiltdata.com)
+# Pull data into Binder notebooks
+This example uses [Quilt](http://quiltdata.com) to inject versioned data packages into a Jupyter notebook.
 
-Click this badge to try it out! [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/quiltdata/data2binder/master?filepath=index.ipynb)
+# How to specify data dependencies in your own Binder
 
-To use quilt.yml in your own Binder repository, follow these steps.
-
-1. Put `quilt` in your requirements.txt
-
-2. Use `quilt.yml` to specify the data packages your Binder depends on.
-
-3. Add
+1. Add `quilt` to `requirements.txt`
+2. Specify data package dependencies in [`quilt.yml`](https://docs.quiltdata.com/cli.html)
+3. Include the following in `postBuild`:
 ``` bash
 #!/bin/bash
 quilt install
 ```
-to the top of your postBuild script. (Make sure it's executable, `chmod +x postBuild` on UNIX-like systems, `git update-index --chmod=+x postBuild` for Windows.)
+4. Ensure that `postBuild` is executable:
+    * `chmod +x postBuild` on UNIX-like systems
+    * `git update-index --chmod=+x postBuild` for Windows.
+    
+# Developer
+* [Quilt repository](https://github.com/quiltdata/quilt)
+* [Quilt docs](https://docs.quiltdata.com)
