@@ -2,7 +2,9 @@
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/quiltdata/data2binder/master?filepath=index.ipynb)
 
 # Pull data into Binder notebooks
-This example uses [Quilt](http://quiltdata.com) to inject versioned data packages into a Jupyter notebook.
+This example uses [Quilt](http://quiltdata.com) to inject data packages into a Jupyter notebook.
+
+Data packages are versioned, immutable snapshots of data. Data packages may contain data of any size. Here is an example of data package: [uciml/iris](https://quiltdata.com/package/uciml/iris).
 
 # How to specify data dependencies in your own Binder
 
