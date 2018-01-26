@@ -15,4 +15,4 @@ To use quilt.yml in your own Binder repository, follow these steps.
 #!/bin/bash
 quilt install
 ```
-to your postBuild script. (Make sure it's executable, `chmod +x postBuild` on UNIX-like systems, `git update-index --chmod=+x postBuild` for Windows.)
+to the top of your postBuild script. (Make sure it's executable, `chmod +x postBuild` on UNIX-like systems, `git update-index --chmod=+x postBuild` for Windows.)
