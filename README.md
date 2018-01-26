@@ -1,3 +1,4 @@
+# Run this example
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/quiltdata/data2binder/master?filepath=index.ipynb)
 
 # Pull data into Binder notebooks
@@ -6,15 +7,34 @@ This example uses [Quilt](http://quiltdata.com) to inject versioned data package
 # How to specify data dependencies in your own Binder
 
 1. Add `quilt` to `requirements.txt`
-2. Specify data package dependencies in [`quilt.yml`](https://docs.quiltdata.com/cli.html)
-3. Include the following in `postBuild`:
+
+2. Specify data package dependencies in `quilt.yml` ([docs](https://docs.quiltdata.com/cli.html)). For example:
+
+```
+packages:
+  - vgauthier/DynamicPopEstimate   # get the latest version
+  - danWebster/sgRNAs:a972d92      # get a specific hash (short hash)
+  - akarve/sales:tag:latest        # get a specific tag
+  - asah/snli:v:1.0                # get a specific version
+```
+
+3. Include the following lines in `postBuild`. (`postBuild` should be executable: `chmod +x postBuild` on UNIX, `git update-index --chmod=+x postBuild` for Windows).
 ``` bash
 #!/bin/bash
 quilt install
 ```
-4. Ensure that `postBuild` is executable:
-    * `chmod +x postBuild` on UNIX-like systems
-    * `git update-index --chmod=+x postBuild` for Windows.
+    
+Now you can access the package data in your Jupyter notebooks:
+```
+In [1]: from quilt.data.akarve import sales
+In [2]: sales.transactions()
+Out[2]: 
+      Row ID  Order ID Order Date Order Priority  Order Quantity       Sales  \
+0          1         3 2010-10-13            Low               6    261.5400   
+1         49       293 2012-10-01           High              49  10123.0200   
+2         50       293 2012-10-01           High              27    244.5700   
+...
+```
     
 # Developer
 * [Quilt repository](https://github.com/quiltdata/quilt)
