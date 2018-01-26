@@ -18,7 +18,7 @@ packages:
   - asah/snli:v:1.0                # get a specific version
 ```
 
-3. Include the following lines in `postBuild`. (`postBuild` should be executable: `chmod +x postBuild` on UNIX, `git update-index --chmod=+x postBuild` for Windows).
+3. Include the following lines at the top of `postBuild`. (`postBuild` should be executable: `chmod +x postBuild` on UNIX, `git update-index --chmod=+x postBuild` for Windows).
 ``` bash
 #!/bin/bash
 quilt install
