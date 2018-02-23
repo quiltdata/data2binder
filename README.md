@@ -1,4 +1,5 @@
-# Import data with Quilt
+# Importing data with Quilt
+
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/binder-examples/data-quilt/master?filepath=index.ipynb)
 
 ## Pull data into Binder notebooks
