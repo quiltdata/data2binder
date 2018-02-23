@@ -41,6 +41,7 @@ Out[2]:
 ...
 ```
     
-# Developer
+## Developer
+
 * [Quilt repository](https://github.com/quiltdata/quilt)
 * [Quilt docs](https://docs.quiltdata.com)
