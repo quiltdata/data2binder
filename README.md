@@ -25,7 +25,7 @@ packages:
 #!/bin/bash
 quilt install
 ```
-If your are adopting the `binder` folder pattern to keep all your repo2dockerfiles configuration files and putting your `quilt.yml` inside of it, your `postBuild` file should look like this:
+If you are adopting the `binder` folder pattern for your `repo2docker` configuration files, and including `quilt.yml`, your `postBuild` file should look like this:
 
 ```bash
 #!/bin/bash
