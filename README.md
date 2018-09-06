@@ -10,7 +10,7 @@ Data packages are versioned, immutable snapshots of data. Data packages may cont
 
 1. Add `quilt` to `requirements.txt`
 
-2. Specify data package dependencies in `quilt.yml` ([docs](https://docs.quiltdata.com/cli.html)). For example:
+2. Specify data package dependencies in `quilt.yml` ([docs](https://docs.quiltdata.com/api/api-cli)). For example:
 
 ```
 packages:
@@ -25,6 +25,13 @@ packages:
 #!/bin/bash
 quilt install
 ```
+If you are adopting the `binder` folder pattern for your `repo2docker` configuration files, and including `quilt.yml`, your `postBuild` file should look like this:
+
+```bash
+#!/bin/bash
+quilt install @./binder/quilt.yml
+```
+
     
 Now you can access the package data in your Jupyter notebooks:
 ```
