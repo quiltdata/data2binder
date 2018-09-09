@@ -27,13 +27,13 @@ packages:
 #!/bin/bash
 quilt install
 ```
-If your are adopting the `binder` folder pattern and putting your `quilt.yml` inside of it, your `postBuild` file should look like this:
+If you are adopting the `binder` folder pattern for your repo2docker configuration files, and including `quilt.yml`, your postBuild file should look like this:
 
 ```bash
 #!/bin/bash
 quilt install @./binder/quilt.yml
 ```
-
+More info about how to install data packages via the `quilt install` command is available [here](https://docs.quiltdata.com/api/api-cli#quilt-install-file-quilt-yml).
     
 4. Now you can access the package data in your Jupyter notebooks:
 
