@@ -1,13 +1,12 @@
-# Importing data with Quilt
+# Run this example
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/quiltdata/data2binder/master?filepath=index.ipynb)
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/binder-examples/data-quilt/master?filepath=index.ipynb)
-
-## Pull data into Binder notebooks
+# Pull data into Binder notebooks
 This example uses [Quilt](http://quiltdata.com) to inject data packages into a Jupyter notebook.
 
 Data packages are versioned, immutable snapshots of data. Data packages may contain data of any size. Here is an example of data package: [uciml/iris](https://quiltdata.com/package/uciml/iris).
 
-## How to specify data dependencies in your own Binder
+# How to specify data dependencies in your own Binder
 
 1. Add `quilt` to `requirements.txt`
 
@@ -22,21 +21,19 @@ packages:
 ```
 
 3. Include the following lines at the top of `postBuild`. (`postBuild` should be executable: `chmod +x postBuild` on UNIX, `git update-index --chmod=+x postBuild` for Windows).
-
-```bash
+``` bash
 #!/bin/bash
 quilt install
 ```
-If you are adopting the `binder` folder pattern for your repo2docker configuration files, and including `quilt.yml`, your postBuild file should look like this:
+If you are adopting the `binder` folder pattern for your `repo2docker` configuration files, and including `quilt.yml`, your `postBuild` file should look like this:
 
 ```bash
 #!/bin/bash
 quilt install @./binder/quilt.yml
 ```
-More info about how to install data packages via the `quilt install` command is available [here](https://docs.quiltdata.com/api/api-cli#quilt-install-file-quilt-yml).
-    
-4. Now you can access the package data in your Jupyter notebooks:
 
+    
+Now you can access the package data in your Jupyter notebooks:
 ```
 In [1]: from quilt.data.akarve import sales
 In [2]: sales.transactions()
@@ -48,7 +45,6 @@ Out[2]:
 ...
 ```
     
-## Developer
-
+# Developer
 * [Quilt repository](https://github.com/quiltdata/quilt)
 * [Quilt docs](https://docs.quiltdata.com)
