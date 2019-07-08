@@ -1,4 +1,0 @@
-quilt
-scikit-learn
-scipy
-pandas
