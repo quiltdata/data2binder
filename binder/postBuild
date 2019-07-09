@@ -1,2 +1,2 @@
 #!/bin/bash
-quilt install
+quilt install @binder/quilt.yml
